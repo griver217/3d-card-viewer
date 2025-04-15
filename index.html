@@ -2,18 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>3D Card Viewer</title>
+  <title>Custom Metallic 3D Card</title>
   <style>
-    body { margin: 0; overflow: hidden; }
-    model-viewer {
-      width: 100vw;
+    body {
+      margin: 0;
+      padding: 0;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       height: 100vh;
-      background-color: #fff;
+    }
+    model-viewer {
+      width: 80vw;
+      height: 90vh;
     }
   </style>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
-  <model-viewer src="kartu.glb" alt="A 3D card model" auto-rotate camera-controls ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1"></model-viewer>
+  <model-viewer src="custom_metallic_card.glb" alt="Metallic 3D Card"
+    camera-controls
+    environment-image="neutral"
+    exposure="1.2"
+    shadow-intensity="1"
+    disable-zoom
+    style="background: radial-gradient(circle, #444 0%, #111 100%);">
+  </model-viewer>
 </body>
 </html>
